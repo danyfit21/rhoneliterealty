@@ -1,0 +1,262 @@
+/* =============================================================
+   Rhon Elite Realty — Colors & Type Foundations
+   -------------------------------------------------------------
+   "The Luxury & High-Performance Palette" — derived from the
+   Brand Blueprint Confidencial (see assets/branding-blueprint.pdf).
+
+   The system avoids saturated primaries. It is built to project:
+     · Adquisitive power
+     · Institutional solidity
+     · The sophisticated discipline of elite contact sport
+
+   Gold is used ONLY for the mark, hairline borders, small
+   category labels, and numerical accents. Never as a fill.
+   ============================================================ */
+
+/* ---------- Webfonts (Google Fonts) --------------------------
+   Display:   Cormorant Garamond (primary), Playfair Display
+   Body / UI: Inter (primary), Montserrat (alternate)
+   ------------------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@200;300;400;500;600;700;800&family=Montserrat:wght@200;300;400;500;600;700;800&display=swap");
+
+:root {
+  /* ============================================================
+     COLOR TOKENS — base palette
+     ============================================================ */
+
+  /* Liquid Gold — logo, hairlines, micro-labels, numerals.
+     Never use as a flood; always restraint. */
+  --rer-gold-100:        #F2E4B6;   /* tint, glow */
+  --rer-gold-200:        #E6D08A;
+  --rer-gold-300:        #D4AF37;   /* PRIMARY GOLD */
+  --rer-gold-400:        #C5A880;   /* warm gold / champagne */
+  --rer-gold-500:        #9C7E3A;   /* deep gold (text on cream) */
+
+  /* Midnight Deep Blue — the foundation surface.
+     Replaces pure black; reads as corporate, infinite, elegant. */
+  --rer-midnight-900:    #060A12;   /* deepest, near-vignette */
+  --rer-midnight-800:    #0B1320;   /* PRIMARY BG */
+  --rer-midnight-700:    #111B2E;   /* card surface */
+  --rer-midnight-600:    #1A2740;   /* hover / elevated card */
+  --rer-midnight-500:    #2A3654;   /* divider / outline subtle */
+
+  /* Chocolate / Earth — warmth, property cards, testimonials.
+     Always paired with midnight; never alone. */
+  --rer-earth-900:       #1F140F;
+  --rer-earth-700:       #3E2A22;   /* PRIMARY EARTH */
+  --rer-earth-500:       #5B4234;
+  --rer-earth-300:       #8C6E5A;
+
+  /* Alabaster — reading text on dark surfaces.
+     Off-white prevents the eye fatigue of pure #FFF. */
+  --rer-alabaster:       #F4F4F6;   /* PRIMARY TEXT */
+  --rer-alabaster-dim:   #D9D9DE;   /* secondary text */
+  --rer-alabaster-mute:  #8A8B92;   /* tertiary / metadata */
+  --rer-alabaster-faint: #4A4D57;   /* disabled / hairline on dark */
+
+  /* Pure neutrals (used sparingly) */
+  --rer-white:           #FFFFFF;
+  --rer-black:           #000000;
+
+  /* ============================================================
+     SEMANTIC COLOR TOKENS
+     ============================================================ */
+
+  /* Surfaces */
+  --bg:                  var(--rer-midnight-800);
+  --bg-deep:             var(--rer-midnight-900);
+  --bg-elevated:         var(--rer-midnight-700);
+  --bg-card:             var(--rer-midnight-700);
+  --bg-card-warm:        var(--rer-earth-700);
+
+  /* Foreground / text */
+  --fg:                  var(--rer-alabaster);          /* primary text */
+  --fg-2:                var(--rer-alabaster-dim);      /* body secondary */
+  --fg-3:                var(--rer-alabaster-mute);     /* meta, labels */
+  --fg-disabled:         var(--rer-alabaster-faint);
+
+  /* Accents */
+  --accent:              var(--rer-gold-300);           /* the gold */
+  --accent-warm:         var(--rer-gold-400);
+  --accent-deep:         var(--rer-gold-500);
+
+  /* Lines */
+  --hairline:            rgba(212, 175, 55, 0.32);      /* gold @ 32% — premium divider */
+  --hairline-soft:       rgba(244, 244, 246, 0.10);     /* white @ 10% — UI divider */
+  --hairline-strong:     rgba(212, 175, 55, 0.65);      /* gold for emphasis */
+
+  /* ============================================================
+     TYPOGRAPHY TOKENS
+     ============================================================ */
+
+  --font-display:        "Cormorant Garamond", "Playfair Display", "Times New Roman", serif;
+  --font-display-alt:    "Playfair Display", "Cormorant Garamond", serif;
+  --font-sans:           "Inter", "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sans-alt:       "Montserrat", "Inter", sans-serif;
+
+  /* A monumental, magazine-style type scale.
+     Display sizes use clamp() to remain composed at any width.   */
+  --t-display-xl:        clamp(56px, 9vw, 144px);   /* hero — Diego's name */
+  --t-display-lg:        clamp(44px, 6.5vw, 96px);  /* section headers */
+  --t-display-md:        clamp(36px, 4.5vw, 64px);
+  --t-display-sm:        clamp(28px, 3vw, 44px);
+
+  --t-h1:                36px;
+  --t-h2:                28px;
+  --t-h3:                22px;
+  --t-h4:                18px;
+
+  --t-body-lg:           19px;
+  --t-body:              17px;
+  --t-body-sm:           15px;
+
+  --t-label:             12px;       /* uppercase eyebrow */
+  --t-meta:              13px;
+
+  /* Tracking — display is tight, eyebrows are wide */
+  --track-tight:         -0.02em;
+  --track-normal:        0;
+  --track-wide:          0.08em;
+  --track-eyebrow:       0.24em;    /* the "magazine cover" feel */
+
+  /* Line heights */
+  --lh-tight:            1.02;       /* display */
+  --lh-snug:             1.18;       /* headings */
+  --lh-normal:           1.55;       /* body */
+  --lh-loose:            1.75;       /* long-form copy */
+
+  /* ============================================================
+     SPACING & SHAPE
+     ============================================================ */
+  --space-1:             4px;
+  --space-2:             8px;
+  --space-3:             12px;
+  --space-4:             16px;
+  --space-5:             24px;
+  --space-6:             32px;
+  --space-7:             48px;
+  --space-8:             64px;
+  --space-9:             96px;
+  --space-10:            128px;
+  --space-11:            192px;       /* "negative space gigante" */
+
+  /* Radii — small, almost architectural. No pillowy cards. */
+  --radius-sm:           2px;
+  --radius-md:           4px;
+  --radius-lg:           8px;
+  --radius-pill:         999px;
+
+  /* Borders */
+  --border-hair:         1px solid var(--hairline);
+  --border-soft:         1px solid var(--hairline-soft);
+  --border-gold:         1px solid var(--accent);
+
+  /* Shadows — restrained. Lift, not bloom. */
+  --shadow-1:            0 1px 2px rgba(0,0,0,0.4);
+  --shadow-2:            0 8px 28px rgba(0,0,0,0.45);
+  --shadow-3:            0 24px 64px -12px rgba(0,0,0,0.6);
+  --shadow-gold-glow:    0 0 0 1px rgba(212,175,55,0.4), 0 12px 40px -12px rgba(212,175,55,0.18);
+
+  /* Motion — "slow luxury motion" per blueprint.
+     Long durations + power3.out / expo.out curves.            */
+  --ease-out-expo:       cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-power3:     cubic-bezier(0.215, 0.61, 0.355, 1);
+  --ease-in-out-power2:  cubic-bezier(0.45, 0, 0.55, 1);
+  --dur-fast:            300ms;
+  --dur-base:            600ms;
+  --dur-slow:            1200ms;
+  --dur-cinema:          1800ms;
+
+  /* Containers */
+  --maxw-prose:          640px;
+  --maxw-content:        1180px;
+  --maxw-wide:           1440px;
+}
+
+/* =============================================================
+   SEMANTIC ELEMENT DEFAULTS
+   ============================================================= */
+
+html, body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-weight: 300;                          /* "play with weight 300" */
+  font-size: var(--t-body);
+  line-height: var(--lh-normal);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: var(--track-tight);
+  line-height: var(--lh-snug);
+  color: var(--fg);
+  margin: 0;
+}
+
+h1 { font-size: var(--t-display-md); line-height: var(--lh-tight); }
+h2 { font-size: var(--t-h1); }
+h3 { font-size: var(--t-h2); }
+h4 { font-size: var(--t-h3); }
+
+/* Display — for hero "DIEGO RHON" treatment */
+.rer-display {
+  font-family: var(--font-display);
+  font-size: var(--t-display-xl);
+  font-weight: 500;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--track-tight);
+}
+
+/* Eyebrow — "wide-tracked uppercase serif" magazine cue */
+.rer-eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--t-label);
+  font-weight: 500;
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* Body */
+p {
+  font-size: var(--t-body);
+  font-weight: 300;
+  color: var(--fg-2);
+  line-height: var(--lh-loose);
+  max-width: var(--maxw-prose);
+  text-wrap: pretty;
+  margin: 0;
+}
+
+/* Strategic Spanish lines (italic, gold-dimmed) */
+.rer-es {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent-warm);
+  letter-spacing: var(--track-normal);
+}
+
+/* Numerals — only place where ultra-bold (800) is sanctioned */
+.rer-numeral {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-feature-settings: "tnum" 1, "lnum" 1;
+  letter-spacing: var(--track-tight);
+}
+
+/* Links — gold underline, hairline */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--hairline);
+  transition: color var(--dur-fast) var(--ease-out-power3),
+              border-color var(--dur-fast) var(--ease-out-power3);
+}
+a:hover { color: var(--accent-warm); border-bottom-color: var(--accent); }
+
+::selection { background: var(--accent); color: var(--rer-midnight-900); }
